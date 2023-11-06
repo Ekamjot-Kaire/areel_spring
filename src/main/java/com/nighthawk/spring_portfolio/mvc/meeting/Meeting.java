@@ -6,10 +6,10 @@ import lombok.NoArgsConstructor;
 
 import jakarta.persistence.*;
 
-@Data  // Annotations to simplify writing code (ie constructors, setters)
+@Data  
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity // Annotation to simplify creating an entity, which is a lightweight persistence domain object. Typically, an entity represents a table in a relational database, and each entity instance corresponds to a row in that table.
+@Entity 
 public class Meeting {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

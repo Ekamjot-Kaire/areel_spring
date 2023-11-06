@@ -41,10 +41,10 @@ public class MeetingApiController {
         Optional<Meeting> optional = repository.findById(id);
         if (optional.isPresent()) {
             Meeting existingMeeting = optional.get();
-            // Update meeting properties with the provided values
+
             existingMeeting.setMeetingName(updatedMeeting.getMeetingName());
             existingMeeting.setDescription(updatedMeeting.getDescription());
-            // Add more properties as needed
+
             Meeting updated = repository.save(existingMeeting);
             return new ResponseEntity<>(updated, HttpStatus.OK);
         }
