@@ -15,7 +15,7 @@ public class MeetingApiController {
     @Autowired
     private MeetingJpaRepository repository;    
 
-    @GetMapping("/")
+    @GetMapping("/getmeetings")
     public ResponseEntity<List<Meeting>> getMeetings() {
         List<Meeting> meetings = repository.findAll();
         return new ResponseEntity<>(meetings, HttpStatus.OK);
@@ -30,7 +30,7 @@ public class MeetingApiController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/")
+    @PostMapping("/newmeeeting")
     public ResponseEntity<Meeting> createMeeting(@RequestBody Meeting meeting) {
         Meeting savedMeeting = repository.save(meeting);
         return new ResponseEntity<>(savedMeeting, HttpStatus.CREATED);
